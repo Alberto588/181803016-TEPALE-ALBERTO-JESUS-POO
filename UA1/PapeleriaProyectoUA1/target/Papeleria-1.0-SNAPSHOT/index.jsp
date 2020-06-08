@@ -21,12 +21,13 @@
             ResultSet rs = null;//realizar consultas
 
             try {
-                Class.forName("com.mysql.jdbc.Driver");//hace referencia al driver importado
+                Class.forName("com.mysql.jdbc.Driver");
 
-                conexion = DriverManager.getConnection("jdbc:mysql://localhost/papeleriaCRUD", "root", "");// lugar donde esta almacenada la bd, usuario contraseña a conectarse
+                conexion = DriverManager.getConnection("jdbc:mysql://localhost/papeleriaCRUD", "root", "");
 
-                stmt = conexion.createStatement();//crear un objeto sql para enviar instriucciones a la bd
-                rs = stmt.executeQuery("Select * from productos");//ejecucion consulta
+                stmt = conexion.createStatement();
+                rs = stmt.executeQuery("Select idProducto,nombreProducto,precioUnitario,"
+                        + "unidades,descuento,marca from productos,marcas where productos.idMarca=marcas.idMarca");
 
         %>
         <h2>Lista de los productos</h2>
@@ -37,6 +38,7 @@
                 <th>precioUnitario</th>
                 <th>unidades</th> 
                 <th>descuento</th>
+                <th>marca</th>
             </tr>
             <%
             while (rs.next()) {
@@ -47,6 +49,7 @@
                 <td><%out.println("$ "+rs.getString(3));%></td>
                 <td><%out.println(rs.getString(4));%></td>
                 <td><%out.println(rs.getString(5)+" %");%></td>
+                <td><%out.println(rs.getString(6));%></td>
             </tr>
             <%
                 }
