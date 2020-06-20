@@ -40,7 +40,7 @@
         
         if(valor == true){
             if(nuevo1.equals(nuevo2)){
-                stmt=conexion.prepareStatement("UPDATE usuario SET password=MD5(?) where ?=id_usuario");
+                stmt=conexion.prepareStatement("UPDATE usuario SET password=MD5(?) where ?=id_uuario");
                 stmt.setString(1, nuevo1);
                 stmt.setInt(2,Integer.parseInt(request.getParameter("id")));
                 stmt.executeUpdate();

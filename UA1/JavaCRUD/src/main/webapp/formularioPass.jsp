@@ -22,7 +22,7 @@
         <div class="container">
             <h1></h1>
             <br>
-            <form action="cambiarPass.jsp" method="get">
+            <form action="cambiarPass.jsp" method="POST">
                 <div class="form-row">
                     <div class="col">
                         <input type="password" class="form-control" placeholder="Contraseña anterior" name="anteriorPass" required/>

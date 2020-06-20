@@ -53,7 +53,7 @@
         <div class="container">
             <h1></h1>
             <br>
-            <form action="eliminacionUsuario.jsp" method="get" texr-alig>
+            <form action="eliminacionUsuario.jsp" method="POST" texr-alig>
                 <div class="form-row">
                     <h4>Usuario: </h4>
                     <div class="col">
